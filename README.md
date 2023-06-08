@@ -13,7 +13,7 @@
 - CMake (3.5以上版本)
 
 ## 安装
-- 下载本库
+- 下载代码 (git clone git@github.com:lixuan998/nine-point-calibration.git)
 - Linux 在项目目录下打开终端并输入以下命令
 ``` shell
   mkdir build && cd build
