@@ -5,8 +5,6 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-
-    
     ui->setupUi(this);
     initUI();
     initParameters();
@@ -16,10 +14,6 @@ MainWindow::MainWindow(QWidget *parent)
     connectStatusBarSignals();
     connectImageProcessThreadSignals();
     connectSpinBoxAndSliderSignals();
-    //connectTabWidgetSignals();
-
-    
-
 }
 
 MainWindow::~MainWindow()
@@ -43,6 +37,7 @@ void MainWindow::initUI()
     }
 
     ui->image_result_tableview->setModel(&model);
+    this->setWindowTitle("九点标定");
 }
 void MainWindow::initParameters()
 {
@@ -151,9 +146,7 @@ void MainWindow::on_calibration_hand2eye2D_button_clicked()
 
     trans_matrix = cv::estimateRigidTransform(pix_points, robot_points, true);
 
-    qDebug() << "A";
     if(trans_matrix.isContinuous()) trans_matrix.reshape(1, trans_matrix.channels());
-qDebug() << "B";
 
     A = trans_matrix.at<double>(0, 0);
     B = trans_matrix.at<double>(0, 1);
@@ -167,7 +160,8 @@ qDebug() << "B";
 
     double r_x = p_x * A + p_y * B + C;
     double r_y = p_x * D + p_y * E + F;
-    qDebug() << "r_x: " << r_x << " r_y: " << r_y;
+
+    QMessageBox::information(nullptr, "提示", "标定成功", QMessageBox::Ok);
 }
 
 void MainWindow::on_img_process_button_clicked()

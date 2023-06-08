@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(Calibrate-Demo VERSION 0.1 LANGUAGES CXX)
+project(nine-point-calibration VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -48,20 +48,20 @@ set(PROJECT_SOURCES
 )
 
 add_executable(
-    Calibrate-Demo
+    nine-point-calibration
     ${PROJECT_SOURCES}
 )
 
-target_link_directories(Calibrate-Demo PRIVATE ${HIK_SDK_DIR}/lib/64)
+target_link_directories(nine-point-calibration PRIVATE ${HIK_SDK_DIR}/lib/64)
 
-target_link_libraries(Calibrate-Demo PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${OpenCV_LIBS})
+target_link_libraries(nine-point-calibration PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${OpenCV_LIBS})
 
-set_target_properties(Calibrate-Demo PROPERTIES
+set_target_properties(nine-point-calibration PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(Calibrate-Demo)
+    qt_finalize_executable(nine-point-calibration)
 endif()
