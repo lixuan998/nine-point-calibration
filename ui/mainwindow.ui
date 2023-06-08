@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>cui bingbing</author>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>982</width>
+    <height>754</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>calibration</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+		color: rgb(255, 255, 255);
+        background-color: rgb(113, 181, 255);
+		border-top-left-radius:5px;
+		border-top-right-radius:5px;
+		border-bottom-left-radius:5px;
+		border-bottom-right-radius:5px;
+}
+QPushButton:hover{
+        background-color: rgb(99, 159, 224);
+		border-top-left-radius:5px;
+		border-top-right-radius:5px;
+		border-bottom-left-radius:5px;
+		border-bottom-right-radius:5px;
+}
+QPushButton:disabled{
+        background-color: rgb(120, 120, 120);
+		border-top-left-radius:5px;
+		border-top-right-radius:5px;
+		border-bottom-left-radius:5px;
+		border-bottom-right-radius:5px;
+}
+QPushButton:pressed{
+        background-color: rgb(93, 161, 235);
+		border-top-left-radius:5px;
+		border-top-right-radius:5px;
+		border-bottom-left-radius:5px;
+		border-bottom-right-radius:5px;
+
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,1">
+      <property name="spacing">
+       <number>8</number>
+      </property>
+      <property name="leftMargin">
+       <number>8</number>
+      </property>
+      <property name="topMargin">
+       <number>8</number>
+      </property>
+      <property name="rightMargin">
+       <number>8</number>
+      </property>
+      <property name="bottomMargin">
+       <number>8</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMaximumSize</enum>
+        </property>
+        <item>
+         <widget class="MouseTrackingLabel" name="source_img_label">
+          <property name="minimumSize">
+           <size>
+            <width>480</width>
+            <height>270</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>1920</width>
+            <height>1080</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>16</width>
+            <height>9</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>480</width>
+            <height>270</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="MouseTrackingLabel" name="destination_img_label">
+          <property name="minimumSize">
+           <size>
+            <width>480</width>
+            <height>270</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>1920</width>
+            <height>1080</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>16</width>
+            <height>9</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>480</width>
+            <height>270</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0">
+        <property name="spacing">
+         <number>1</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMinimumSize</enum>
+        </property>
+        <item>
+         <widget class="QTabWidget" name="tabWidget_process">
+          <property name="sizeIncrement">
+           <size>
+            <width>19</width>
+            <height>6</height>
+           </size>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tab_hand2eye">
+           <attribute name="title">
+            <string>标定</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QCheckBox" name="real_time_calc_checkbox">
+                <property name="text">
+                 <string>实时计算</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QLabel" name="label_h2e_bin_th">
+                <property name="text">
+                 <string>二值化阈值</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="thresh_slider">
+                <property name="minimumSize">
+                 <size>
+                  <width>50</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="minimum">
+                 <number>0</number>
+                </property>
+                <property name="maximum">
+                 <number>255</number>
+                </property>
+                <property name="value">
+                 <number>100</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="thresh_spinbox">
+                <property name="maximum">
+                 <number>255</number>
+                </property>
+                <property name="value">
+                 <number>100</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QPushButton" name="img_process_button">
+              <property name="text">
+               <string>图像处理</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_h2e_msg">
+              <property name="minimumSize">
+               <size>
+                <width>50</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableView" name="image_result_tableview">
+              <property name="selectionMode">
+               <enum>QAbstractItemView::NoSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectItems</enum>
+              </property>
+              <property name="horizontalScrollMode">
+               <enum>QAbstractItemView::ScrollPerItem</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="calibration_hand2eye2D_button">
+              <property name="text">
+               <string>标定</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>982</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuImgSrc">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="imgfile_action"/>
+   </widget>
+   <widget class="QMenu" name="menuExport">
+    <property name="title">
+     <string>导出</string>
+    </property>
+    <addaction name="actioncfg"/>
+   </widget>
+   <addaction name="menuImgSrc"/>
+   <addaction name="menuExport"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionBGRA">
+   <property name="text">
+    <string>BGRA</string>
+   </property>
+  </action>
+  <action name="actionYUV420P">
+   <property name="text">
+    <string>YUV420P</string>
+   </property>
+  </action>
+  <action name="action960X540_2">
+   <property name="text">
+    <string>960X540</string>
+   </property>
+  </action>
+  <action name="action1920X1080">
+   <property name="text">
+    <string>1920X1080</string>
+   </property>
+  </action>
+  <action name="action960X540">
+   <property name="text">
+    <string>960X540</string>
+   </property>
+  </action>
+  <action name="actionRunOnce">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>RunOnce</string>
+   </property>
+  </action>
+  <action name="actionRun">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Run</string>
+   </property>
+  </action>
+  <action name="actionShowSafeArea">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>ShowSafeArea</string>
+   </property>
+  </action>
+  <action name="actionShowRunDirection">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>ShowRunDirection</string>
+   </property>
+  </action>
+  <action name="actionCollectOnce">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>CollectOnce</string>
+   </property>
+  </action>
+  <action name="actionCollectAlways">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>CollectAlways</string>
+   </property>
+  </action>
+  <action name="action_toggle_calibration_SVG_SRC">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>toggle calibration SVG/SRC</string>
+   </property>
+  </action>
+  <action name="actionImageCalibration">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>ImageCalibration</string>
+   </property>
+  </action>
+  <action name="actionCollectOnceTopDown">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>CollectOnceTopDown</string>
+   </property>
+  </action>
+  <action name="actionfps25">
+   <property name="text">
+    <string>fps25</string>
+   </property>
+  </action>
+  <action name="actionfps10">
+   <property name="text">
+    <string>fps10</string>
+   </property>
+  </action>
+  <action name="actionfps5">
+   <property name="text">
+    <string>fps5</string>
+   </property>
+  </action>
+  <action name="actionfps1">
+   <property name="text">
+    <string>fps1</string>
+   </property>
+  </action>
+  <action name="actioncfg">
+   <property name="text">
+    <string>导出标定数据</string>
+   </property>
+  </action>
+  <action name="imgfile_action">
+   <property name="text">
+    <string>打开文件</string>
+   </property>
+  </action>
+  <action name="action66">
+   <property name="text">
+    <string>66</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>导出标定数据</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MouseTrackingLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">mousetrackinglabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
