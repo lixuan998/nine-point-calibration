@@ -11,22 +11,17 @@ void MouseTrackingLabel::mouseMoveEvent(QMouseEvent *event)
     x = (double) event->x();
     y = (double) event->y();
 
-    const QPixmap *temp = this->pixmap();
-    if(temp == nullptr)
+    QPixmap temp = this->pixmap();
+    if(temp.isNull())
     {
-        //qDebug() << "nullptr debug from mousetrackinglabel.cpp line 18";
-        return;
-    }
-    else if(temp->isNull())
-    {
-        //qDebug() << "null pixmap debug from mousetrackinglabel.cpp line 23";
+        qDebug() << "null pixmap debug from mousetrackinglabel.cpp line 23";
     }
     else
     {
-        if(x <= temp->width() && y <= temp->height())
+        if(x <= temp.width() && y <= temp.height())
         {
-            x = x / temp->width() * img_width;
-            y = y / temp->height() * img_height;
+            x = x / temp.width() * img_width;
+            y = y / temp.height() * img_height;
             emit showCoordinateOnStatusBar(x, y);
         }
     }
